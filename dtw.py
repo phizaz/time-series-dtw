@@ -60,7 +60,9 @@ class DTW:
 
         lenA = len(A)
         lenB = len(B)
-        dp = [ [ float('Inf') for i in range(lenB + shift_col)] for i in range(lenA + shift_row)]
+
+        INF = 100000000
+        dp = [ [ INF for i in range(lenB + shift_col)] for i in range(lenA + shift_row)]
 
         for i in range(0, lenA):
             aa = i + shift_row
