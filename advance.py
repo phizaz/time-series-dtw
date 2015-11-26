@@ -4,6 +4,13 @@ from file import File
 
 __author__ = 'phizaz'
 
+def bad_fn(A, B):
+    return DTW.dist_damn_adv(A, B,
+                             [
+                                 (-1, -1),
+                             ],
+                             [ [1] ])
+
 def normal_sym_fn(A, B):
     return DTW.dist_damn_adv(A, B,
                       [ (0, -1),
@@ -98,42 +105,102 @@ jobs = [
     #     'test': File.open_with_label('Coffee_TEST'),
     #     'fn': normal_asym_fn,
     # },
-    {
-        'title': 'Coffee.P=0.5.sym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
-        'fn': half_sym_fn,
-    },
-    {
-        'title': 'Coffee.P=0.5.asym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
-        'fn': half_asym_fn,
-    },
+
+    # {
+    #     'title': 'Coffee.P=0.5.sym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': half_sym_fn,
+    # },
+    # {
+    #     'title': 'Coffee.P=0.5.asym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': half_asym_fn,
+    # },
+
+    # {
+    #     'title': 'Coffee.P=1.sym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': one_sym_fn,
+    # },
+    # {
+    #     'title': 'Coffee.P=1.asym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': one_asym_fn,
+    # },
+
+    # {
+    #     'title': 'Coffee.P=2.sym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': two_sym_fn,
+    # },
+    # {
+    #     'title': 'Coffee.P=2.asym',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': two_asym_fn,
+    # },
+
+    # {
+    #     'title': 'Coffee.bad',
+    #     'train': File.open_with_label('Coffee_TRAIN'),
+    #     'test': File.open_with_label('Coffee_TEST'),
+    #     'fn': bad_fn,
+    # },
+
+    # {
+    #     'title': 'Beef.P=0.sym',
+    #     'train': File.open_with_label('Beef_TRAIN'),
+    #     'test': File.open_with_label('Beef_TEST'),
+    #     'fn': normal_sym_fn,
+    # },
+    # {
+    #     'title': 'Beef.P=0.asym',
+    #     'train': File.open_with_label('Beef_TRAIN'),
+    #     'test': File.open_with_label('Beef_TEST'),
+    #     'fn': normal_asym_fn,
+    # },
+    #
+    # {
+    #     'title': 'Beef.P=0.5.sym',
+    #     'train': File.open_with_label('Beef_TRAIN'),
+    #     'test': File.open_with_label('Beef_TEST'),
+    #     'fn': half_sym_fn,
+    # },
+    # {
+    #     'title': 'Beef.P=0.5.asym',
+    #     'train': File.open_with_label('Beef_TRAIN'),
+    #     'test': File.open_with_label('Beef_TEST'),
+    #     'fn': half_asym_fn,
+    # },
 
     {
-        'title': 'Coffee.P=1.sym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
+        'title': 'Beef.P=1.sym',
+        'train': File.open_with_label('Beef_TRAIN'),
+        'test': File.open_with_label('Beef_TEST'),
         'fn': one_sym_fn,
     },
     {
-        'title': 'Coffee.P=1.asym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
+        'title': 'Beef.P=1.asym',
+        'train': File.open_with_label('Beef_TRAIN'),
+        'test': File.open_with_label('Beef_TEST'),
         'fn': one_asym_fn,
     },
 
     {
-        'title': 'Coffee.P=2.sym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
+        'title': 'Beef.P=2.sym',
+        'train': File.open_with_label('Beef_TRAIN'),
+        'test': File.open_with_label('Beef_TEST'),
         'fn': two_sym_fn,
     },
     {
-        'title': 'Coffee.P=2.asym',
-        'train': File.open_with_label('Coffee_TRAIN'),
-        'test': File.open_with_label('Coffee_TEST'),
+        'title': 'Beef.P=2.asym',
+        'train': File.open_with_label('Beef_TRAIN'),
+        'test': File.open_with_label('Beef_TEST'),
         'fn': two_asym_fn,
     },
 ]
@@ -144,7 +211,6 @@ for i, job in enumerate(jobs):
 
     result = {
         'title': job['title'],
-        'mode': 'P=0',
     }
 
     start_time = time.process_time()

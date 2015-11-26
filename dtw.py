@@ -74,7 +74,7 @@ class DTW:
                 row += 1
                 warp_path[i].append((row, col))
 
-        # print('warp_path:', warp_path)
+        # print('warp_path: ', warp_path)
 
         INF = 100000000
         dp = [ [ INF for i in range(lenB + shift_col)] for i in range(lenA + shift_row)]
