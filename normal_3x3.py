@@ -28,11 +28,11 @@ for i, job in enumerate(jobs):
 
     start_time = time.process_time()
 
-    for a in range(1, 2):
+    for a in range(3 + 1):
         print('a:', a)
-        for b in range(1, 2):
+        for b in range(3 + 1):
             print('b:', b)
-            for c in range(1, 2):
+            for c in range(3 + 1):
 
                 abc = [a, b, c]
                 zeros = abc.count(0)
