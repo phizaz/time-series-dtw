@@ -5,14 +5,14 @@ __author__ = 'phizaz'
 class DTW:
 
     @staticmethod
-    def predict(training_with_label, instance):
+    def predict(training_with_label, instance, weights, directions):
         data = instance['data']
 
         min_dist = float('Inf')
         min_pos = -1
 
         for j, candidate in enumerate(training_with_label):
-            dist = DTW.dist(data, candidate['data'])
+            dist = DTW.dist_adv(data, candidate['data'], weights, directions)
 
             if dist < min_dist:
                 min_dist = dist
@@ -22,11 +22,11 @@ class DTW:
         return prediction
 
     @staticmethod
-    def predict_list(training_with_label, testing_with_label):
+    def predict_list(training_with_label, testing_with_label, weights, directions):
 
         correctness = 0
         for i, each in enumerate(testing_with_label):
-            prediction = DTW.predict(training_with_label, each)
+            prediction = DTW.predict(training_with_label, each, weights, directions)
 
             if prediction == each['label']:
                 correctness += 1

@@ -48,7 +48,7 @@ for i, job in enumerate(jobs):
 
                 start_time = time.process_time()
 
-                accuracy, correctness = DTW.predict_list(job['train'], job['test'])
+                accuracy, correctness = DTW.predict_list(job['train'], job['test'], [a, b, c], [ [-1, 0], [0, -1], [-1, -1] ])
 
                 print('[', a, b, c, ']', 'accuracy:', accuracy, 'correctness:', correctness)
 
