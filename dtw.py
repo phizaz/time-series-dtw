@@ -76,9 +76,8 @@ class DTW:
                 if i == 0 and j == 0:
                     this = pair_dist
                 else:
-                    candidates = [weight * dp[aa + directions[k][0]][bb + directions[k][1]] for k, weight in enumerate(weights) ]
-                    best_candidate = min(candidates)
-                    this = pair_dist + best_candidate
+                    candidates = [pair_dist * weight + dp[aa + directions[k][0]][bb + directions[k][1]] for k, weight in enumerate(weights) ]
+                    this = min(candidates)
 
                 dp[aa][bb] = this
 
