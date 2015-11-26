@@ -20,6 +20,18 @@ class File:
             return result
 
     @staticmethod
+    def open_with_label(file):
+        arr = File.open(file)
+
+        result = []
+        for each in arr:
+            result.append({
+                "label": each[0],
+                "data": each[1:]
+            })
+        return result
+
+    @staticmethod
     def open_json(file):
         with open(file) as file:
             return json.load(file)

@@ -1,1 +1,1 @@
-{"title": "Coffee", "dtw": {"accuracy": 82.14285714285714, "correctness": 23, "total": 28}, "euclid": {"accuracy": 75.0, "correctness": 21, "total": 28}}
+{"euclid": {"correctness": 21, "total": 28, "accuracy": 75.0}, "title": "Coffee", "dtw": {"correctness": 23, "total": 28, "accuracy": 82.14285714285714}}
